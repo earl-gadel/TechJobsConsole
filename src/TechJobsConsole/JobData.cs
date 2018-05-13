@@ -57,6 +57,29 @@ namespace TechJobsConsole
 
             return jobs;
         }
+        /* 
+        * FindByValue method 
+        */
+        public static string[] FindByValue(string value)
+        {
+            // load data, if not already loaded
+            LoadData();
+
+            List<string> jobs = new List<string>();
+
+            foreach (Dictionary<string, string> col in AllJobs)
+            {
+                string aValue = col[value];
+
+                if (aValue.Contains(value))
+                {
+                    jobs.Add(col);
+                }
+            }
+            return jobs;
+        }
+
+
 
         /*
          * Load and parse data from job_data.csv
@@ -131,7 +154,6 @@ namespace TechJobsConsole
                     }
                 }
             }
-
             // Add the final value
             rowValues.Add(valueBuilder.ToString());
             valueBuilder.Clear();
