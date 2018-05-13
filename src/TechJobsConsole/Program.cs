@@ -118,9 +118,24 @@ namespace TechJobsConsole
 
         private static void PrintJobs(List<Dictionary<string, string>> someJobs)
         {
-            Console.WriteLine("*****" + "\n" + someJobs + "\n" + someJobs + "\n" + someJobs + "\n" + someJobs + "\n" + someJobs + "\n" + "*****");
+            foreach (Dictionary<string, string> jobs in someJobs)
+            {
+                Console.WriteLine("*****\n");
+                foreach (var job in jobs)
+                {
+                    Console.WriteLine("{0}: {1}\n", job.Key, job.Value);
+                }
+                
+                Console.WriteLine("*****\n");
+            }
+
+
+
+
+            //Console.WriteLine("*****" + "\n" + someJobs + "\n" + someJobs + "\n" + someJobs + "\n" + someJobs + "\n" + someJobs + "\n" + "*****");
 
             {
+
 
             }
             
