@@ -60,20 +60,23 @@ namespace TechJobsConsole
         /* 
         * FindByValue method 
         */
-        public static string[] FindByValue(string value)
+        public static List<Dictionary<string, string>> FindByValue(string column, string value)
         {
             // load data, if not already loaded
             LoadData();
 
-            List<string> jobs = new List<string>();
+            List<Dictionary<string, string>> jobs = new List<Dictionary<string, string>>();
 
             foreach (Dictionary<string, string> col in AllJobs)
             {
-                string aValue = col[value];
-
-                if (aValue.Contains(value))
+                foreach (var job in col)
                 {
-                    jobs.Add(col);
+                    string aValue = job.Value;
+
+                    if (aValue.Contains(value))
+                    {
+                        jobs.Add(new Dictionary<string, string>() { { job.Key, job.Value } });
+                    }
                 }
             }
             return jobs;
