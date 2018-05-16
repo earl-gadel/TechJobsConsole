@@ -75,7 +75,7 @@ namespace TechJobsConsole
 
                     if (aValue.Contains(value))
                     {
-                        jobs.Add(new Dictionary<string, string>() { { job.Key, job.Value } });
+                        jobs.Add(col);
                     }
                 }
             }
