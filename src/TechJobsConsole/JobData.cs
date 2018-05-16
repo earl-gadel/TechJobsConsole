@@ -69,7 +69,7 @@ namespace TechJobsConsole
 
             foreach (Dictionary<string, string> col in AllJobs)
             {
-                foreach (var job in col)
+                foreach (KeyValuePair<string, string> job in col)
                 {
                     string aValue = job.Value;
 

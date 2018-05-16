@@ -122,7 +122,7 @@ namespace TechJobsConsole
             foreach (Dictionary<string, string> jobs in someJobs)
             {
                 Console.WriteLine("*****\n");
-                foreach (var job in jobs)
+                foreach (KeyValuePair<string, string> job in jobs)
                 {
                     Console.WriteLine("{0}: {1}\n", job.Key, job.Value);
                 }
@@ -130,6 +130,7 @@ namespace TechJobsConsole
                 Console.WriteLine("*****\n");
             }
         }
+        /*
         private static void PrintJobs(List<string> someJobs)
         {
             foreach (string jobs in someJobs)
@@ -144,5 +145,6 @@ namespace TechJobsConsole
             }          
 
         }
+        */
     }
 }
