@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using System.Text;
@@ -47,9 +48,9 @@ namespace TechJobsConsole
 
             foreach (Dictionary<string, string> row in AllJobs)
             {
-                string aValue = row[column];
+                string aValue = row[column].ToLower();
 
-                if (aValue.Contains(value))
+                if (aValue.Contains(value.ToLower()))
                 {
                     jobs.Add(row);
                 }
@@ -71,9 +72,9 @@ namespace TechJobsConsole
             {
                 foreach (KeyValuePair<string, string> job in col)
                 {
-                    string aValue = job.Value;
+                    string aValue = job.Value.ToLower();
 
-                    if (aValue.Contains(value))
+                    if (aValue.Contains(value.ToLower()))
                     {
                         jobs.Add(col);
                     }
